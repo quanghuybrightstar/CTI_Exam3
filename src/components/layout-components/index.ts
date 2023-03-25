@@ -1,0 +1,1 @@
+export { default as GlobalStyleWrapper } from './GlobalStyle/GlobalStyle';

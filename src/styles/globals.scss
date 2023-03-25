@@ -1,0 +1,41 @@
+@import './overrideAntd.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+$colorText: #2c2c2c;
+
+:root {
+    --primary-color: #66615b;
+    --white-color: #fff;
+    --text-menu-color: #d1d0ce;
+    --background-app-color: #f4f3ef;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  line-height: 1.6rem;
+};
+
+body {
+    color: $colorText;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    padding: 1.5rem 0;
+    margin: 0 auto;
+}
+

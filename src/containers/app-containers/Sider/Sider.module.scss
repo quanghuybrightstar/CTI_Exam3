@@ -1,0 +1,26 @@
+.sider-container {
+  height: 100vh;
+  position: fixed;
+  color: var(--white-color);
+  overflow: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  // ::-webkit-scrollbar {
+  //   width: 0.5rem;
+  // }
+  // ::-webkit-scrollbar-track {
+  //   background: #d9d9d9;
+  // }
+
+  // ::-webkit-scrollbar-thumb {
+  //   background: #ff881d;
+  // }
+  .sider__name {
+    padding: 2rem 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+}
