@@ -1,8 +1,8 @@
-.sider-container {
+.sider_container {
   height: 100vh;
   position: fixed;
   color: var(--white-color);
-  overflow: auto;
+  overflow-y: auto;
   left: 0;
   top: 0;
   bottom: 0;

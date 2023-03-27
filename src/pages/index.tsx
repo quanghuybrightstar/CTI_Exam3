@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import AppLayout from '@/src/layouts/app-layout';
+import {AppLayout} from '@/src/components/layout-components';
 
 export default function Home() {
   return (

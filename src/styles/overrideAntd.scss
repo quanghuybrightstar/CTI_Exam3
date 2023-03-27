@@ -3,90 +3,87 @@
 $input-search-color: #dedede;
 
 
-//Ant Layout
-.ant-layout {
+  //Ant Layout
+  .ant-layout {
+    //Menu
+    .ant-menu-light
+      .ant-menu-item:hover:not(.ant-menu-item-selected):not(
+        .ant-menu-submenu-selected
+      ),
+    .ant-menu-light
+      .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(
+        .ant-menu-submenu-selected
+      ) {
+      color: rgba($color: #fff, $alpha: 0.4);
+    }
 
-    
-  //Menu
-  .ant-menu-light
-    .ant-menu-item:hover:not(.ant-menu-item-selected):not(
-      .ant-menu-submenu-selected
-    ),
-  .ant-menu-light
-    .ant-menu-submenu-title:hover:not(.ant-menu-item-selected):not(
-      .ant-menu-submenu-selected
-    ) {
-    color: rgba($color: #fff, $alpha: 0.4);
-  }
+    .ant-layout-sider,
+    .ant-menu {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--primary-color);
+      color: var(--text-menu-color);
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
 
-  .ant-layout-sider,
-  .ant-menu {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--primary-color);
-    color: var(--text-menu-color);
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
+    .ant-menu {
+      .ant-menu-item,
+      .ant-menu-submenu {
+        margin-bottom: 1.6rem;
 
-  .ant-menu {
-    .ant-menu-item,
-    .ant-menu-submenu {
-      margin-bottom: 1.6rem;
+        .ant-menu-item-icon {
+          font-size: 2.2rem;
+        }
+      }
+    }
 
-      .ant-menu-item-icon {
-        font-size: 2.2rem;
+    .menu-user {
+      .ant-menu-submenu {
+        margin-bottom: 0;
+        padding: 0.7rem 0;
+      }
+    }
+
+    .ant-menu-light {
+      .ant-menu-item-selected {
+        background-color: #7a746c;
+        color: #eb632d;
+      }
+      .ant-menu-submenu-selected > .ant-menu-submenu-title {
+        color: #eb632d;
+      }
+    }
+
+    //Divider
+    .ant-divider-horizontal {
+      background-color: var(--white-color);
+      margin: 0;
+    }
+
+    //Trigger
+    .trigger {
+      font-size: 4rem;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+
+    //Input Search
+    .ant-input-search {
+      .ant-input {
+        background-color: $input-search-color;
+        border: none;
+        border-bottom: 2.5px solid $input-search-color;
+        outline: none;
+      }
+
+      .ant-btn {
+        border: none;
+        background-color: #dedede;
+
+        &:hover {
+          color: var(--primary-color);
+        }
       }
     }
   }
 
-  .menu-user {
-    .ant-menu-submenu {
-      margin-bottom: 0;
-      padding: 0.7rem 0;
-    }
-  }
-
-  .ant-menu-light {
-    .ant-menu-item-selected {
-      background-color: #7a746c;
-      color: #eb632d;
-    }
-    .ant-menu-submenu-selected > .ant-menu-submenu-title {
-      color: #eb632d;
-    }
-  }
-
-  //Divider
-  .ant-divider-horizontal {
-    background-color: var(--white-color);
-    margin: 0;
-  }
-
-  //Trigger
-  .trigger {
-    font-size: 4rem;
-    color: var(--primary-color);
-    cursor: pointer;
-  }
-
-  //Input Search
-  .ant-input-search {
-    .ant-input {
-      background-color: $input-search-color;
-      border: none;
-      border-bottom: 2.5px solid $input-search-color;
-      outline: none;
-    }
-
-    .ant-btn {
-      border: none;
-      background-color: #dedede;
-
-      &:hover {
-        color: var(--primary-color);
-      }
-    }
-  }
-
-  
-}

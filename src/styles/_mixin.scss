@@ -1,0 +1,29 @@
+@mixin flexDisplay {
+  display: flex;
+  align-items: center;
+}
+
+@mixin titleStyle {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+@mixin descStyle {
+  color: $textColor;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+@mixin tableDashboardStyle {
+  width: 100%;
+  border-collapse: collapse;
+  height: 50%;
+  overflow-y: auto;
+  td {
+    padding: 1.2rem 0.7rem;
+    vertical-align: middle;
+    border-collapse: collapse;
+    border-top: 1px solid #dee2e6;
+  }
+}

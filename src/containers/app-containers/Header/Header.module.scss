@@ -1,14 +1,14 @@
-.header-container {
+@import '@/src/styles/_mixin.scss';
+
+.headerContainer {
   padding: 0 3rem 0 1.5rem;
   background-color: var(--background-app-color);
   border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
+  @include flexDisplay;
   justify-content: space-between;
 
-  .header-left {
-    display: inline-flex;
-    align-items: center;
+  .header_left {
+    @include flexDisplay;
     .header__name {
       font-size: 2rem;
       text-transform: capitalize;
@@ -19,12 +19,11 @@
     }
   }
 
-  .header-right {
-    display: inline-flex;
-    align-items: center;
+  .header_right {
+    @include flexDisplay;
 
-    .header__icon, 
-    .header-icon--notify  {
+    .header__icon,
+    .header__icon_notify {
       font-size: 3rem;
       cursor: pointer;
       -webkit-transition: all ease-out 0.5s;
@@ -42,14 +41,13 @@
       }
     }
 
-    .header-icon--notify {
-        display: inline-flex;
-        align-items: center;
+    .header__icon_notify {
+      @include flexDisplay;
 
-        font-size: 2rem;
-        .icon_fill_down {
-            font-size: 1rem;
-        }
+      font-size: 2rem;
+      .icon_fill_down {
+        font-size: 1rem;
+      }
     }
   }
 }

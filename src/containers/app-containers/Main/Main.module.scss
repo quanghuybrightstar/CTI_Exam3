@@ -1,0 +1,155 @@
+@import '@/src/styles/_mixin.scss';
+
+$textColor: #9a9a9a;
+$iconStatusColor: #66615b;
+$greenColor: #6bd098;
+
+.content_container {
+  overflow: initial;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 1.5rem 0 5rem;
+  .dashboard_row {
+    margin-bottom: 2rem;
+    width: 100%;
+
+    .statistic_content {
+      @include flexDisplay;
+      justify-content: space-between;
+      border-bottom: 1px solid $textColor;
+      padding-bottom: 1.5rem;
+
+      .statistic_icon {
+        color: #fbc658;
+        font-size: 4.2rem;
+      }
+
+      .statistic_text {
+        @include flexDisplay;
+        flex-direction: column;
+        .statistic__name {
+          color: $textColor;
+          font-size: 1.6rem;
+        }
+        .statistic__number {
+          font-size: 2.8rem;
+        }
+      }
+    }
+
+    .statistic_footer,
+    .tasks_footer,
+    .sales_footer {
+      @include flexDisplay;
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      .statistic_iconStatus {
+        color: $iconStatusColor;
+      }
+      .statistic_status {
+        margin-left: 0.8rem;
+        color: #9a9a9a;
+      }
+    }
+
+    //Chart
+    .chart_header {
+      @include flexDisplay;
+      justify-content: space-between;
+      font-size: 2rem;
+      .chart__percent {
+        padding: 0.2rem 0.6rem;
+        border-radius: 1.5rem;
+        font-size: 1.1rem;
+        background-color: $greenColor;
+        color: var(--white-color);
+        font-weight: 600;
+      }
+    }
+
+    .chart_content {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid $textColor;
+      .chart__name {
+        text-align: center;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+      }
+    }
+
+    .chart_footer {
+      @include flexDisplay;
+      padding-top: 1.5rem;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      .chart_icon__statistic {
+        color: $greenColor;
+        font-size: 3rem;
+        cursor: pointer;
+      }
+    }
+
+    //Global Sales
+    .globalSales_card {
+      width: 100%;
+      .globalSales_header {
+        margin-bottom: 2.5rem;
+        .globalSales__title {
+          @include titleStyle;
+        }
+
+        .globalSales__desc {
+          @include descStyle;
+        }
+      }
+
+      //Table Country
+      .globalSales__table {
+        @include tableDashboardStyle;
+      }
+    }
+
+    //Task
+    .card_header {
+      margin-bottom: 2.5rem;
+      .card__title {
+        @include titleStyle;
+      }
+
+      .card__desc {
+        @include descStyle;
+      }
+    }
+
+    .table_wrapper {
+      height: 20rem;
+      overflow: auto;
+      .tasks__table {
+        @include tableDashboardStyle;
+        overflow: scroll;
+        .task__devImg {
+          width: 4rem;
+          border-radius: 50%;
+        }
+
+        .task__icon_edit {
+          cursor: pointer;
+          color: #51bcda;
+          font-size: 2rem;
+        }
+        .task__icon_delete {
+          font-size: 2rem;
+          cursor: pointer;
+          color: orangered;
+        }
+      }
+    }
+
+    .tasks_footer,
+    .sales_footer {
+      border-top: 1px solid $textColor;
+      padding-top: 1.5rem;
+    }
+  }
+}

@@ -1,3 +1,3 @@
-export {default as HeaderContainer} from './Header';
-export {default as SiderContainer} from './Sider';
-export {default as MainContainer} from './Main';
+export {default as HeaderContainer} from './Header/index';
+export {default as SiderContainer} from './Sider/index';
+export {default as MainContainer} from './Main/index';

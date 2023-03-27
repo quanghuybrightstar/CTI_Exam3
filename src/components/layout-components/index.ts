@@ -1,1 +1,1 @@
-export { default as GlobalStyleWrapper } from './GlobalStyle/GlobalStyle';
+export {default as AppLayout} from './app-layout'

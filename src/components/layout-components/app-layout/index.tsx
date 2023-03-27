@@ -2,6 +2,7 @@ import { Layout, Divider } from 'antd';
 import { SiderContainer, HeaderContainer, MainContainer } from '@/src/containers/app-containers';
 import React, { useState } from 'react';
 import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai';
+import styles from './AppLayout.module.scss';
 
 const { Header, Content } = Layout;
 
@@ -9,7 +10,7 @@ function AppLayout () {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Layout hasSider>
+    <Layout hasSider className={styles.app_layout}>
       <SiderContainer props={{ collapsed: collapsed }}></SiderContainer>
       <Layout style={{backgroundColor: '#f4f3ef'}}>
         <HeaderContainer >
