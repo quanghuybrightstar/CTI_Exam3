@@ -1,3 +1,1 @@
-interface IChildrenHeader extends IChildrenWrapped {
-    
-}
+interface IChildrenHeader extends IChildrenWrapped {}

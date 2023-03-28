@@ -17,7 +17,8 @@ const australiaImgURL =
   'https://demos.creative-tim.com/paper-dashboard-2-pro/assets/img/flags/AU.png';
 
 //Images Backend Dev
-const BeDev1ImgURL = 'https://demos.creative-tim.com/paper-dashboard-2-pro/assets/img/faces/ayo-ogunseinde-2.jpg';
+const BeDev1ImgURL =
+  'https://demos.creative-tim.com/paper-dashboard-2-pro/assets/img/faces/ayo-ogunseinde-2.jpg';
 
 //Data of Statistic item
 export const dataStatisticItem: IStatisticItem[] = [
@@ -114,19 +115,23 @@ export const dataCountryProduct: ITableCountry[] = [
 export const dataTableTasks: ITableTasks[] = [
   {
     URLImg: BeDev1ImgURL,
-    reportTitle: 'Sign contract for "What are conference organizers afraid of?"',
+    reportTitle:
+      'Sign contract for "What are conference organizers afraid of?"',
   },
   {
     URLImg: BeDev1ImgURL,
-    reportTitle: 'Lines From Great Russian Literature? Or E-mails From My Boss?',
+    reportTitle:
+      'Lines From Great Russian Literature? Or E-mails From My Boss?',
   },
   {
     URLImg: BeDev1ImgURL,
-    reportTitle: 'Using dummy content or fake information in the Web design process can result in products with unrealistic"',
+    reportTitle:
+      'Using dummy content or fake information in the Web design process can result in products with unrealistic"',
   },
   {
     URLImg: BeDev1ImgURL,
-    reportTitle: 'But I must explain to you how all this mistaken idea of denouncing pleasure',
+    reportTitle:
+      'But I must explain to you how all this mistaken idea of denouncing pleasure',
   },
 ];
 

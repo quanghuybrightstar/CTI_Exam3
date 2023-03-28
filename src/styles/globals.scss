@@ -4,10 +4,10 @@
 $colorText: #2c2c2c;
 
 :root {
-    --primary-color: #66615b;
-    --white-color: #fff;
-    --text-menu-color: #d1d0ce;
-    --background-app-color: #f4f3ef;
+  --primary-color: #66615b;
+  --white-color: #fff;
+  --text-menu-color: #d1d0ce;
+  --background-app-color: #f4f3ef;
 }
 
 *,
@@ -18,25 +18,37 @@ $colorText: #2c2c2c;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
   font-family: 'Montserrat', sans-serif;
   font-size: 62.5%;
   line-height: 1.6rem;
-};
+}
 
 body {
-    color: $colorText;
-    overflow-y: hidden; //Test
+  color: $colorText;
+  overflow-y: hidden; //Test
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .container {
-    width: 100%;
-    padding: 0 1.5rem 1.5rem;
-    margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem 1.5rem;
+  margin: 0 auto;
 }
 
+//Button in table
+.btn-edit {
+  color: blue;
+  cursor: pointer;
+  margin-bottom: 0.2rem;
+};
+
+.btn-delete {
+  color: red;
+  cursor: pointer;
+}

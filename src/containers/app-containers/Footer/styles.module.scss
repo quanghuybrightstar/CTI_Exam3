@@ -1,0 +1,23 @@
+@import '@/src/styles/_mixin.scss';
+$text-footer-color: #2c2c2c;
+
+.footer_container {
+  padding-left: 0;
+  .footer__wrapper {
+    @include flexDisplay;
+    justify-content: space-between;
+    color: $text-footer-color;
+
+    .footer_left {
+      font-size: 1.2rem;
+      .footer__topic {
+        margin-left: 1rem;
+        color: $text-footer-color;
+      }
+    }
+    .footer__icon_heart {
+      color: red;
+      margin: 0.3rem;
+    }
+  }
+}

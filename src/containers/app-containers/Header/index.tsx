@@ -1,14 +1,13 @@
 import React from 'react';
-import styles from './Header.module.scss';
+import styles from './styles.module.scss';
 import { Layout, Input } from 'antd';
 import { TbLayoutDashboard } from 'react-icons/tb';
 import { HiOutlineBell } from 'react-icons/hi';
-import {AiFillCaretDown} from 'react-icons/ai';
-import {IoSettingsOutline} from 'react-icons/io5'
+import { AiFillCaretDown } from 'react-icons/ai';
+import { IoSettingsOutline } from 'react-icons/io5';
 
 const { Header } = Layout;
 const { Search } = Input;
-
 
 const HeaderContainer = ({ children }: IChildrenHeader) => {
   const onSearch = (value: string) => console.log(value);
@@ -34,10 +33,10 @@ const HeaderContainer = ({ children }: IChildrenHeader) => {
 
         <div className={styles.header__icon_notify}>
           <HiOutlineBell />
-          <AiFillCaretDown className={styles.icon_fill_down}/>
+          <AiFillCaretDown className={styles.icon_fill_down} />
         </div>
 
-        <IoSettingsOutline className={styles.header__icon}/>
+        <IoSettingsOutline className={styles.header__icon} />
       </div>
     </Header>
   );

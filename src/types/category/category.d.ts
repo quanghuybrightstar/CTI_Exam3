@@ -1,0 +1,3 @@
+interface IDataCategory {
+  name: string;
+}

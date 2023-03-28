@@ -1,3 +1,3 @@
 interface IChildrenWrapped {
-	children: JSX.Element;
+  children: JSX.Element;
 }

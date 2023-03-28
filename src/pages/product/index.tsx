@@ -1,12 +1,12 @@
 import React from 'react';
 import { Layout, Rate } from 'antd';
 import { AppLayout } from '@/src/components/layout-components';
-import DashboardContainer from '@/src/containers/Dashboard';
+import ProductContainer from '@/src/containers/Product';
 
 function Dashboard() {
   return (
     <AppLayout>
-      <DashboardContainer></DashboardContainer>
+      <ProductContainer></ProductContainer>
     </AppLayout>
   );
 }

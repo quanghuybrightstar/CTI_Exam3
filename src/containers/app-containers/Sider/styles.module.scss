@@ -1,3 +1,5 @@
+@import '@/src/styles/_mixin.scss';
+
 .sider_container {
   height: 100vh;
   position: fixed;
@@ -21,6 +23,22 @@
     font-weight: 400;
     font-size: 1.6rem;
     text-align: center;
+    cursor: pointer;
   }
 
+  .menuItem {
+    @include flexDisplay;
+    .ant-menu-title-content {
+      @include flexDisplay;
+    }
+    .iconMenuItem {
+      font-size: 3rem;
+    }
+
+    .labelMenuItem {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin-left: 1.5rem;
+    }
+  }
 }

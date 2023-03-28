@@ -1,21 +1,25 @@
-
-import { Column as Column2 } from '@ant-design/plots';
-import ColumnChart from '@ant-design/plots/es/components/column';
+// import { Column as Column2 } from '@ant-design/plots';
+// import ColumnChart from '@ant-design/plots/es/components/column';
+import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import Utils from '@/src/utils';
-import styles from './Main.module.scss';
+import styles from './styles.module.scss';
 import { Layout, Row, Col, Card, Image, Input } from 'antd';
 import * as data from '@/src/store/data/dashboardData';
 import { TfiRulerPencil } from 'react-icons/tfi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { GrUpdate } from 'react-icons/gr';
 import { MdDone } from 'react-icons/md';
+import { FooterContainer } from '../app-containers';
 
 const { Content } = Layout;
 
-const MainContainer = () => {
-    
-  const [config] = useState( {
+const DashboardContainer = () => {
+  const DynamicColumn = dynamic(
+    () => import('@ant-design/plots/es/components/column')
+  );
+
+  const [config] = useState({
     data: data.dataSalesChart,
     isGroup: true,
     xField: 'IdProduct',
@@ -211,7 +215,7 @@ const MainContainer = () => {
                 </p>
               </div>
               <div style={{ height: '20rem' }}>
-                {/* <ColumnChart {...config} /> */}
+                <DynamicColumn {...config} />
               </div>
               <div className={styles.sales_footer}>
                 <MdDone className={styles.statistic_iconStatus}></MdDone>
@@ -224,11 +228,38 @@ const MainContainer = () => {
         </Row>
 
         <Row gutter={16} className={styles.dashboard_row}>
-            
+          {data.dataStatisticItem.map((data: IStatisticItem, index: number) => {
+            const Icon = data.icon;
+            const IconStatus = data.iconStatus;
+            return (
+              <Col key={`statistic_${index}`} span={6}>
+                <Card>
+                  <div className={styles.statistic_content}>
+                    <Icon className={styles.statistic_icon}></Icon>
+                    <div className={styles.statistic_text}>
+                      <div className={styles.statistic__name}>{data.name}</div>
+                      <div className={styles.statistic__number}>
+                        {data.numberStatistic}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.statistic_footer}>
+                    <IconStatus
+                      className={styles.statistic_iconStatus}
+                    ></IconStatus>
+                    <div className={styles.statistic_status}>{data.status}</div>
+                  </div>
+                </Card>
+              </Col>
+            );
+          })}
         </Row>
+
+        <FooterContainer></FooterContainer>
       </Content>
     </div>
   );
 };
 
-export default MainContainer;
+export default DashboardContainer;

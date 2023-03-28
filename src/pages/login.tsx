@@ -12,3 +12,5 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+//login -> co token -> luu cooki -> chekc lay tu cookie ra

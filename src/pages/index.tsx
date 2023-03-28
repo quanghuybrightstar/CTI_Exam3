@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import {AppLayout} from '@/src/components/layout-components';
+import { AppLayout } from '@/src/components/layout-components';
 
 export default function Home() {
   return (
@@ -12,7 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-          <AppLayout></AppLayout>
+        <AppLayout>
+          <div></div>
+        </AppLayout>
       </main>
     </>
   );

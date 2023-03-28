@@ -1,0 +1,14 @@
+.product_container {
+  padding: 2.8rem 0;
+  .imgProductWrapper {
+    width: 7rem;
+  }
+
+  .product__desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+  }
+}

@@ -8,7 +8,12 @@ interface IMenuItemSider {
   key: string;
   icon?: MenuProps['items'];
   label: string;
-  children?: IMenuItemSider[]; 
+  children?: IMenuItemSider[];
 }
 
-type GetItemType = (key: string, icon: MenuProps['items'], label: string, children?: IMenuItemSider[]) => IMenuItemSider[];
+type GetItemType = (
+  key: string,
+  icon: MenuProps['items'],
+  label: string,
+  children?: IMenuItemSider[]
+) => IMenuItemSider[];
