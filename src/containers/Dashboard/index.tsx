@@ -1,7 +1,7 @@
 // import { Column as Column2 } from '@ant-design/plots';
 // import ColumnChart from '@ant-design/plots/es/components/column';
 import dynamic from 'next/dynamic';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Utils from '@/src/utils';
 import styles from './styles.module.scss';
 import { Layout, Row, Col, Card, Image, Input } from 'antd';
@@ -11,6 +11,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { GrUpdate } from 'react-icons/gr';
 import { MdDone } from 'react-icons/md';
 import { FooterContainer } from '../app-containers';
+import Link from 'next/link';
 
 const { Content } = Layout;
 

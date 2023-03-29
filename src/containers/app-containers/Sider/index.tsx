@@ -11,9 +11,9 @@ const { Sider } = Layout;
 const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
   const router = useRouter();
 
-  const handleClickRouter = (label: string) => {
-    router.push(`/${label}`);
-  };
+  // const handleClickRouter = (label: string) => {
+  //   router.push(`/${label}`);
+  // };
 
   return (
     <Sider
@@ -23,7 +23,9 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
       className={styles.sider_container}
     >
       <div className={styles.sider__name}>
-        CREATE TIM
+        <Link href={'/'} className={styles.sider__name}>
+          CREATIVE TIM
+        </Link>
       </div>
       <Divider orientation="left" plain></Divider>
       <Menu mode="inline" items={userInfoItems} className={'menu-user'}></Menu>
@@ -35,11 +37,13 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
           return (
             <Menu.Item
               key={`menu_${item.key}`}
-              onClick={() => handleClickRouter(item.label)}
+              // onClick={() => handleClickRouter(item.label)}
               className={styles.menuItem}
             >
-              <IconMenuItem className={styles.iconMenuItem}></IconMenuItem>
-              <span className={styles.labelMenuItem}>{item.label}</span>
+              <Link href={`/${item.label}`}>
+                <IconMenuItem className={styles.iconMenuItem}></IconMenuItem>
+                <span className={styles.labelMenuItem}>{item.label}</span>
+              </Link>
             </Menu.Item>
           );
         })}

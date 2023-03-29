@@ -130,7 +130,12 @@ const ProductContainer = () => {
       render: (item) => (
         <div>
           <div className="btn-edit">Sửa</div>
-          <div className="btn-delete" onClick={() => handleDeleteProduct(item.id)}>Xóa</div>
+          <div
+            className="btn-delete"
+            onClick={() => handleDeleteProduct(item.id)}
+          >
+            Xóa
+          </div>
         </div>
       ),
       width: '30%',

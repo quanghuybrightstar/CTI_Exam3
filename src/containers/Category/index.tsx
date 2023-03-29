@@ -39,7 +39,7 @@ const CategoryContainer = () => {
   ];
 
   return (
-    <div className='container'>
+    <div className="container">
       <div className={styles.category_container}>
         <Table
           columns={columnsCategories}
