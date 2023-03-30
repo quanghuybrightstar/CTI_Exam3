@@ -3,12 +3,29 @@ import styles from './styles.module.scss';
 import { Input, Button, Form, message, Checkbox, Divider } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { useApi } from '@/src/api/useApi';
+import { useRouter } from 'next/router';
+import { setCookie, getCookie } from 'cookies-next';
 
 const Login: React.FC = () => {
-  const onFinish = (values: any) => {
+  const $api = useApi();
+  const router = useRouter();
+  const onFinish = async (values: any) => {
     console.log('Received values of form: ', values);
+    const dataResLogin: IDataResLogin = await $api.getAccessToken(values);
+    if (dataResLogin.success) {
+      message.success('Đăng nhập thành công');
+      // setCookie('accessToken', `${dataResLogin.data.token}`)
+      console.log(dataResLogin.data.token);
+      setCookie('accessToken', dataResLogin.data.token);
+
+      router.push('/product');
+    } else {
+      message.error('Đăng nhập thất bại');
+    }
   };
 
+  //   getCookie('accessToken');
   return (
     <div className={styles.login}>
       <div className={styles.form_wrapper}>

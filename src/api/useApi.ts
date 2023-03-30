@@ -9,6 +9,21 @@ const useApi = () => {
   };
 
   return {
+    getAccessToken: async (body?: ILoginData) => {
+      const dataRes: IDataResLogin = {
+        success: false,
+        data: {},
+      };
+      await $axios
+        .post('auth/login', body, config)
+        .then((response) => {
+          dataRes.success = true;
+          dataRes.data = response.data;
+          console.log(response.data);
+        })
+        .catch((error) => console.log(error));
+      return dataRes;
+    },
     getCategories: async () => {
       let data: string[] = [];
       await $axios

@@ -29,6 +29,7 @@
 
   .menuItem {
     @include flexDisplay;
+    margin-left: 0;
     .ant-menu-title-content {
       @include flexDisplay;
     }
