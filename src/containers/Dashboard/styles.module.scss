@@ -13,6 +13,7 @@ $greenColor: #6bd098;
     margin-bottom: 2rem;
     width: 100%;
 
+    //Statistic
     .statistic_content {
       @include flexDisplay;
       justify-content: space-between;
@@ -52,7 +53,7 @@ $greenColor: #6bd098;
       }
     }
 
-    //Chart
+    //Chart statistic
     .chart_header {
       @include flexDisplay;
       justify-content: space-between;
@@ -122,6 +123,12 @@ $greenColor: #6bd098;
       }
     }
 
+    //Chart Sales
+    .chart_sales {
+      height: 20rem;
+    }
+
+    //Table
     .table_wrapper {
       height: 20rem;
       overflow: auto;

@@ -178,7 +178,7 @@ const DashboardContainer = () => {
                         <td>
                           <Image
                             src={data.URLImg}
-                            alt={''}
+                            alt={'Image Dev'}
                             className={styles.task__devImg}
                           ></Image>
                         </td>
@@ -215,7 +215,7 @@ const DashboardContainer = () => {
                   All Products Including Taxes
                 </p>
               </div>
-              <div style={{ height: '20rem' }}>
+              <div className={styles.chart_sales}>
                 <DynamicColumn {...config} />
               </div>
               <div className={styles.sales_footer}>

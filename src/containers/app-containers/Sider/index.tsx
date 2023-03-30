@@ -40,7 +40,7 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
               // onClick={() => handleClickRouter(item.label)}
               className={styles.menuItem}
             >
-              <Link href={`/${item.label}`}>
+              <Link href={`/${item.label}`} className={styles.linkMenuItem}>
                 <IconMenuItem className={styles.iconMenuItem}></IconMenuItem>
                 <span className={styles.labelMenuItem}>{item.label}</span>
               </Link>

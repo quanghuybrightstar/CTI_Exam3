@@ -21,26 +21,6 @@ export const dataMenuItems: IMenuItemSider[] = [
     icon: FaProductHunt,
     label: 'product',
   },
-
-  {
-    key: '4',
-    icon: RiBookMarkLine,
-    label: 'PAGES',
-    children: [
-      {
-        key: '4_1',
-        label: 'Timeline',
-      },
-      {
-        key: '4_2',
-        label: 'Login',
-      },
-      {
-        key: '4_3',
-        label: 'Register',
-      },
-    ],
-  },
 ];
 
 export const userInfoItems: IMenuItemSider[] = [

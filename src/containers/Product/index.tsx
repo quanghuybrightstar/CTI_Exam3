@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useApi } from '@/src/hooks/useApi';
+import { useApi } from '@/src/api/useApi';
 import type { ColumnsType, ColumnType } from 'antd/es/table';
 import { Table, Button, Modal, message, Input, Space } from 'antd';
 import Utils from '@/src/utils';
@@ -20,6 +20,7 @@ const ProductContainer = () => {
   const [productId, setProductId] = useState<string>('');
   const [confirmLoading, setConfirmLoading] = useState<boolean>(false);
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState<boolean>(false);
+
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef<InputRef>(null);
@@ -264,9 +265,7 @@ const ProductContainer = () => {
     <div className="container">
       <div className={styles.product_container}>
         <Link href={'/product/add_product'}>
-          <Button style={{ float: 'right', marginBottom: '2.8rem' }}>
-            Thêm sản phẩm mới
-          </Button>
+          <Button className="btn_add_right">Thêm sản phẩm mới</Button>
         </Link>
 
         <Table

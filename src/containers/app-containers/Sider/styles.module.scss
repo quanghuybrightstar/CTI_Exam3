@@ -32,6 +32,10 @@
     .ant-menu-title-content {
       @include flexDisplay;
     }
+    .linkMenuItem {
+      @include flexDisplay;
+      padding: 1rem 0;
+    }
     .iconMenuItem {
       font-size: 3rem;
     }

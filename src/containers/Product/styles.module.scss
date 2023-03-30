@@ -1,5 +1,9 @@
 .product_container {
-  padding: 2.8rem 0;
+  padding-bottom: 10rem;
+  overflow: initial;
+  height: 100vh;
+  overflow-y: auto;
+
   .imgProductWrapper {
     width: 7rem;
   }

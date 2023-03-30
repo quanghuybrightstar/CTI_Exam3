@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, Table } from 'antd';
 import { AppLayout } from '@/src/components/layout-components';
-import AddProduct from '@/src/containers/AddProduct';
+import CategoryContainer from '@/src/containers/Category';
 
 function Dashboard() {
   return (
     <AppLayout>
-      <AddProduct></AddProduct>
+      <CategoryContainer></CategoryContainer>
     </AppLayout>
   );
 }

@@ -10,3 +10,10 @@ interface IDataProduct {
   brand: string;
   category: string;
 }
+
+interface IUpdateProduct {
+  title?: string;
+  description?: string;
+  price?: number;
+  category?: string;
+}

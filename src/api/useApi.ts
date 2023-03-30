@@ -23,8 +23,8 @@ const useApi = () => {
       let data: string[] = [];
       await $axios
         .get('products', config)
-        .then((respone) => {
-          data = respone.data.products;
+        .then((response) => {
+          data = response.data.products;
         })
         .catch((error) => console.log(error));
       return data;
@@ -32,7 +32,27 @@ const useApi = () => {
     deleteProduct: async (productId: string) => {
       let success: boolean = false;
       await $axios
-        .delete(`https://dummyjson.com/products/${productId}`)
+        .delete(`products/${productId}`)
+        .then(() => {
+          success = true;
+        })
+        .catch((error) => console.log(error));
+      return success;
+    },
+    createProduct: async (body?: IBodyCreateProduct) => {
+      let success: boolean = false;
+      await $axios
+        .post('product/add', body, config)
+        .then(() => {
+          success = true;
+        })
+        .catch((error) => console.log(error));
+      return success;
+    },
+    updateProduct: async (body: IUpdateProduct, productID: string) => {
+      let success: boolean = false;
+      await $axios
+        .put(`products/${productID}`, body, config)
         .then(() => {
           success = true;
         })

@@ -1,0 +1,10 @@
+@import '@/src/styles/_mixin.scss';
+
+.addProduct_container {
+  .form_container {
+    @include formInput;
+    .btn_submit_form {
+      width: 100%;
+    }
+  }
+}

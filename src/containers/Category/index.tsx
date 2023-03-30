@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useApi } from '@/src/hooks/useApi';
+import { useApi } from '@/src/api/useApi';
 import type { ColumnsType } from 'antd/es/table';
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 const CategoryContainer = () => {
   const $api = useApi();
@@ -41,6 +42,9 @@ const CategoryContainer = () => {
   return (
     <div className="container">
       <div className={styles.category_container}>
+        <Link href={'/category/add_category'}>
+          <Button className="btn_add_right">Thêm thể loại mới</Button>
+        </Link>
         <Table
           columns={columnsCategories}
           dataSource={dataCategory}
