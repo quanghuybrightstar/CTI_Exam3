@@ -1,9 +1,8 @@
+@import '@/src/styles/_mixin.scss';
+
 .product_container {
   padding-bottom: 10rem;
-  overflow: initial;
-  height: 100vh;
-  overflow-y: auto;
-
+  @include container_scroll;
   .imgProductWrapper {
     width: 7rem;
   }

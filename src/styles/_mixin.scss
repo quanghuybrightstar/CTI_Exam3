@@ -32,3 +32,27 @@
   max-width: 100rem;
   padding: 10rem 0;
 }
+
+@mixin container_scroll {
+  overflow: initial;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+@mixin animationIcon {
+  font-size: 3rem;
+  cursor: pointer;
+  -webkit-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin-left: 3rem;
+
+  &:hover {
+    color: #51cbce;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}

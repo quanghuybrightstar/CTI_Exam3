@@ -14,6 +14,6 @@ interface IDataProduct {
 interface IUpdateProduct {
   title?: string;
   description?: string;
-  price?: number;
+  price?: string;
   category?: string;
 }

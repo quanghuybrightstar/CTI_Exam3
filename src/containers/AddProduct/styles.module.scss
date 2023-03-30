@@ -1,6 +1,7 @@
 @import '@/src/styles/_mixin.scss';
 
 .addProduct_container {
+  @include container_scroll;
   .form_container {
     @include formInput;
     .btn_submit_form {

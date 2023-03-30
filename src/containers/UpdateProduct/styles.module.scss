@@ -1,0 +1,5 @@
+@import '@/src/styles/_mixin.scss';
+
+.updateProduct_container {
+  @include container_scroll;
+}

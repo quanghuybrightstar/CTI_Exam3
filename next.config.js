@@ -7,4 +7,15 @@ const nextConfig = {
   },
 };
 
+const redirects = async () => {
+  return [
+    {
+      source: '/auth/login',
+      destinataion: '/',
+      permanent: true,
+    },
+  ];
+};
+
 module.exports = nextConfig;
+module.exports = redirects;

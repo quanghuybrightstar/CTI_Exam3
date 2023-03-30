@@ -13,7 +13,7 @@ import Highlighter from 'react-highlight-words';
 
 const ProductContainer = () => {
   const $api = useApi();
-  const [dataCategory, setDataCategory] = useState();
+  const [dataProducts, setDataProducts] = useState();
   const [modalText, setModalText] = useState<string>(
     'Bạn chắc chắn muốn xóa sản phẩm này?'
   );
@@ -27,7 +27,7 @@ const ProductContainer = () => {
 
   const getProducts = async () => {
     const data: any = await $api.getProducts();
-    setDataCategory(data);
+    setDataProducts(data);
   };
 
   useEffect(() => {
@@ -249,7 +249,9 @@ const ProductContainer = () => {
       key: '',
       render: (item) => (
         <div>
-          <div className="btn-edit">Sửa</div>
+          <Link href={`product/${item.id}`}>
+            <div className="btn-edit">Sửa</div>
+          </Link>
           <div
             className="btn-delete"
             onClick={() => handleDeleteProduct(item.id)}
@@ -270,7 +272,7 @@ const ProductContainer = () => {
 
         <Table
           columns={columnProducts}
-          dataSource={dataCategory}
+          dataSource={dataProducts}
           rowKey="id"
           pagination={{ pageSize: 5 }}
         ></Table>

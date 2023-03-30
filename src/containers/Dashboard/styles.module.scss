@@ -5,9 +5,7 @@ $iconStatusColor: #66615b;
 $greenColor: #6bd098;
 
 .content_container {
-  overflow: initial;
-  height: 100vh;
-  overflow-y: auto;
+  @include container_scroll;
   padding: 1.5rem 0 10rem;
   .dashboard_row {
     margin-bottom: 2rem;

@@ -1,0 +1,9 @@
+@import '@/src/styles/_mixin.scss';
+
+.logout_container {
+  @include flexDisplay;
+  .header__icon {
+    @include animationIcon;
+    font-size: 2rem;
+  }
+}

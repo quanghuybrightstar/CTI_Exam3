@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import { Input, Button, Form, message, Checkbox, Divider } from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Input, Button, Form, message, Divider } from 'antd';
 import Link from 'next/link';
 import { useApi } from '@/src/api/useApi';
 import { useRouter } from 'next/router';
@@ -15,7 +14,6 @@ const Login: React.FC = () => {
     const dataResLogin: IDataResLogin = await $api.getAccessToken(values);
     if (dataResLogin.success) {
       message.success('Đăng nhập thành công');
-      // setCookie('accessToken', `${dataResLogin.data.token}`)
       console.log(dataResLogin.data.token);
       setCookie('accessToken', dataResLogin.data.token);
 

@@ -64,7 +64,7 @@ const useApi = () => {
         .catch((error) => console.log(error));
       return success;
     },
-    updateProduct: async (body: IUpdateProduct, productID: string) => {
+    updateProduct: async (body?: IUpdateProduct, productID?: string) => {
       let success: boolean = false;
       await $axios
         .put(`products/${productID}`, body, config)
@@ -73,6 +73,16 @@ const useApi = () => {
         })
         .catch((error) => console.log(error));
       return success;
+    },
+    getProductById: async (productId: string) => {
+      let data: string[] = [];
+      await $axios
+        .get(`products/${productId}`, config)
+        .then((response) => {
+          data = response.data;
+        })
+        .catch((error) => console.log(error));
+      return data;
     },
   };
 };

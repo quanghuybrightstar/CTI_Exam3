@@ -3,6 +3,7 @@ import { Form, Input, Button, Modal, message, Select } from 'antd';
 import styles from './styles.module.scss';
 import { useRouter } from 'next/router';
 import { useApi } from '@/src/api/useApi';
+import FormContainer from '@/src/components/Form';
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -56,85 +57,23 @@ const AddProduct: React.FC = () => {
     setIsOpenConfirmModal(false);
   };
 
-  //Get category data
-  const [dataCategory, setDataCategory] = useState<string[]>([]);
-
-  const getCategory = async () => {
-    const data: any = await $api.getCategories();
-    setDataCategory(data);
-  };
-
-  useEffect(() => {
-    getCategory();
-  }, []);
-
   return (
     <div className={styles.addProduct_container}>
       <Button className="btn_add_left" onClick={handleClickBack}>
         Quay lại
       </Button>
-      <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        className={styles.form_container}
-        initialValues={{ remember: true }}
+      <FormContainer
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete="off"
-      >
-        <Form.Item
-          label="Tên sản phẩm"
-          name="title"
-          rules={[{ required: true, message: 'Vui lòng nhập tên sản phẩm!' }]}
-        >
-          <Input placeholder="Tên sản phẩm ..."></Input>
-        </Form.Item>
-
-        <Form.Item
-          label="Giá"
-          name="price"
-          rules={[{ required: true, message: 'Vui lòng nhập giá sản phẩm!' }]}
-        >
-          <Input type="number" placeholder="Giá ..."></Input>
-        </Form.Item>
-
-        <Form.Item
-          label="Thể loại"
-          name="category"
-          rules={[
-            { required: true, message: 'Vui lòng nhập thể loại sản phẩm!' },
-          ]}
-        >
-          <Select placeholder="Thể loại ...">
-            {dataCategory?.map((category: string) => (
-              <Option value={category} key={category}>
-                {category}
-              </Option>
-            ))}
-          </Select>
-        </Form.Item>
-
-        <Form.Item
-          label="Mô tả"
-          name="description"
-          rules={[{ required: true, message: 'Vui lòng nhập mô tả sản phẩm!' }]}
-        >
-          <TextArea placeholder="Mô tả ..."></TextArea>
-        </Form.Item>
-
-        <Form.Item
-          wrapperCol={{ offset: 8, span: 16 }}
-          className={styles.btn_submit_form}
-        >
-          <Button type="primary" htmlType="submit">
-            Thêm sản phẩm
-          </Button>
-        </Form.Item>
-      </Form>
-
+        defaultValue={{
+          title: '',
+          price: '',
+          category: '',
+          description: '',
+        }}
+      ></FormContainer>
       <Modal
-        title="Xoá sản phẩm"
+        title="Thêm sản phẩm"
         open={isOpenConfirmModal}
         onOk={handleOK}
         cancelText={'Hủy'}
