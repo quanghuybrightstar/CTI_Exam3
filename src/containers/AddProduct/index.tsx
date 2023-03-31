@@ -3,7 +3,7 @@ import { Form, Input, Button, Modal, message, Select } from 'antd';
 import styles from './styles.module.scss';
 import { useRouter } from 'next/router';
 import { useApi } from '@/src/api/useApi';
-import FormContainer from '@/src/components/Form';
+import FormComponent from '@/src/components/Form';
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -17,6 +17,7 @@ const AddProduct: React.FC = () => {
   const [confirmLoading, setConfirmLoading] = useState<boolean>(false);
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState<boolean>(false);
   const [bodyAddProduct, setBodyAddProduct] = useState();
+  const [form] = Form.useForm();
 
   //Func Form
   const onFinish = (values: any) => {
@@ -62,16 +63,11 @@ const AddProduct: React.FC = () => {
       <Button className="btn_add_left" onClick={handleClickBack}>
         Quay lại
       </Button>
-      <FormContainer
+      <FormComponent
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        defaultValue={{
-          title: '',
-          price: '',
-          category: '',
-          description: '',
-        }}
-      ></FormContainer>
+        forms={form}
+      ></FormComponent>
       <Modal
         title="Thêm sản phẩm"
         open={isOpenConfirmModal}

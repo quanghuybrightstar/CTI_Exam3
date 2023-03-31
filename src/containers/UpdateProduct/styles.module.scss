@@ -2,4 +2,11 @@
 
 .updateProduct_container {
   @include container_scroll;
+
+  .form_container {
+    @include formInput;
+    .btn_submit_form {
+      width: 100%;
+    }
+  }
 }

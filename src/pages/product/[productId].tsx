@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 function Dashboard() {
   const router = useRouter();
   const { productId } = router.query;
-  console.log(productId);
 
   return (
     <AppLayout>

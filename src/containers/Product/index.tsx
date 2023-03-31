@@ -25,14 +25,13 @@ const ProductContainer = () => {
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef<InputRef>(null);
 
-  const getProducts = async () => {
-    const data: any = await $api.getProducts();
-    setDataProducts(data);
-  };
-
   useEffect(() => {
+    const getProducts = async () => {
+      const data: any = await $api.getProducts();
+      setDataProducts(data);
+    };
     getProducts();
-  }, []);
+  }, [$api]);
 
   const handleDeleteProduct = (id: string) => {
     showModal();
@@ -46,7 +45,6 @@ const ProductContainer = () => {
     setModalText('Đang xác nhận...');
     let success = await $api.deleteProduct(productId);
     if (success) {
-      getProducts();
       setIsOpenConfirmModal(false);
       setConfirmLoading(false);
       setModalText('Bạn chắc chắn muốn xóa sản phẩm này?');
@@ -249,7 +247,7 @@ const ProductContainer = () => {
       key: '',
       render: (item) => (
         <div>
-          <Link href={`product/${item.id}`}>
+          <Link href={'product/[productId]'} as={`product/${item.id}`}>
             <div className="btn-edit">Sửa</div>
           </Link>
           <div
@@ -266,7 +264,7 @@ const ProductContainer = () => {
   return (
     <div className="container">
       <div className={styles.product_container}>
-        <Link href={'/product/add_product'}>
+        <Link href={'/product/add-product'}>
           <Button className="btn_add_right">Thêm sản phẩm mới</Button>
         </Link>
 

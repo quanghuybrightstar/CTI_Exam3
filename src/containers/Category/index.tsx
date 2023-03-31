@@ -42,7 +42,7 @@ const CategoryContainer = () => {
   return (
     <div className="container">
       <div className={styles.category_container}>
-        <Link href={'/category/add_category'}>
+        <Link href={'/category/add-category'}>
           <Button className="btn_add_right">Thêm thể loại mới</Button>
         </Link>
         <Table

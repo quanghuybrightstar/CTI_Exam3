@@ -2,14 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import { useApi } from '@/src/api/useApi';
 import styles from './styles.module.scss';
+import { FormInstance } from 'antd/lib/form';
 
 const { Option } = Select;
 const { TextArea } = Input;
 
-const FormContainer: React.FC<IPropsForm> = ({
+//Test type FormInstance
+// interface IPropsForm {
+//   onFinish: (value: any) => void,
+//   onFinishFailed: (value: any) => void,
+//   forms: FormInstance,
+// }
+
+const FormComponent: React.FC<Form.IFormProps> = ({
   onFinish,
   onFinishFailed,
-  defaultValue,
+  forms,
 }) => {
   const $api = useApi();
 
@@ -25,9 +33,12 @@ const FormContainer: React.FC<IPropsForm> = ({
     getCategory();
   }, []);
 
+  [forms] = Form.useForm();
+
   return (
     <div>
       <Form
+        form={forms}
         name="basic"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
@@ -42,10 +53,7 @@ const FormContainer: React.FC<IPropsForm> = ({
           name="title"
           rules={[{ required: true, message: 'Vui lòng nhập tên sản phẩm!' }]}
         >
-          <Input
-            placeholder="Tên sản phẩm ..."
-            defaultValue={defaultValue.title}
-          ></Input>
+          <Input placeholder="Tên sản phẩm ..."></Input>
         </Form.Item>
 
         <Form.Item
@@ -53,11 +61,7 @@ const FormContainer: React.FC<IPropsForm> = ({
           name="price"
           rules={[{ required: true, message: 'Vui lòng nhập giá sản phẩm!' }]}
         >
-          <Input
-            type="number"
-            placeholder="Giá ..."
-            defaultValue={defaultValue.price}
-          ></Input>
+          <Input type="number" placeholder="Giá ..."></Input>
         </Form.Item>
 
         <Form.Item
@@ -67,10 +71,7 @@ const FormContainer: React.FC<IPropsForm> = ({
             { required: true, message: 'Vui lòng nhập thể loại sản phẩm!' },
           ]}
         >
-          <Select
-            placeholder="Thể loại ..."
-            defaultValue={defaultValue.category}
-          >
+          <Select placeholder="Thể loại ...">
             {dataCategory?.map((category: string) => (
               <Option value={category} key={category}>
                 {category}
@@ -84,10 +85,7 @@ const FormContainer: React.FC<IPropsForm> = ({
           name="description"
           rules={[{ required: true, message: 'Vui lòng nhập mô tả sản phẩm!' }]}
         >
-          <TextArea
-            placeholder="Mô tả ..."
-            defaultValue={defaultValue.description}
-          ></TextArea>
+          <TextArea placeholder="Mô tả ..."></TextArea>
         </Form.Item>
 
         <Form.Item
@@ -103,4 +101,4 @@ const FormContainer: React.FC<IPropsForm> = ({
   );
 };
 
-export default FormContainer;
+export default FormComponent;

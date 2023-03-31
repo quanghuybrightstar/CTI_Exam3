@@ -12,7 +12,7 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
   const router = useRouter();
 
   // const handleClickRouter = (label: string) => {
-  //   router.push(`/${label}`);
+  //   router.push(`${label}`);
   // };
 
   return (
@@ -30,6 +30,7 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
       <Divider orientation="left" plain></Divider>
       <Menu mode="inline" items={userInfoItems} className={'menu-user'}></Menu>
       <Divider orientation="left" plain></Divider>
+
       <Menu mode="inline" defaultSelectedKeys={['1']}>
         {dataMenuItems.map((item: IMenuItemSider) => {
           const IconMenuItem = item.icon;
@@ -40,7 +41,7 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
               // onClick={() => handleClickRouter(item.label)}
               className={styles.menuItem}
             >
-              <Link href={`/${item.label}`} className={styles.linkMenuItem}>
+              <Link href={`${item.label}`} className={styles.linkMenuItem}>
                 <IconMenuItem className={styles.iconMenuItem}></IconMenuItem>
                 <span className={styles.labelMenuItem}>{item.label}</span>
               </Link>

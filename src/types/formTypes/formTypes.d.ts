@@ -1,10 +1,9 @@
-interface IPropsForm {
-  onFinish: (value: any) => void;
-  onFinishFailed: (value: any) => void;
-  defaultValue: {
-    title?: string;
-    price?: string;
-    category?: string;
-    description?: string;
-  };
+// import { FormInstance } from 'antd/lib/form';
+
+declare namespace Form {
+  interface IFormProps {
+    onFinish: (value: any) => void;
+    onFinishFailed: (value: any) => void;
+    forms: FormInstance;
+  }
 }
