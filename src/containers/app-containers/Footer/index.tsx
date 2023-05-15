@@ -11,7 +11,7 @@ const FooterContainer: React.FC = () => {
         <div className={styles.footer_left}>
           <a href="#" className={styles.footer__topic}>
             {' '}
-            CREATIVE TIM
+            QUANG HUY
           </a>
           <a href="#" className={styles.footer__topic}>
             {' '}

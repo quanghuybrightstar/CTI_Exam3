@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, Divider } from 'antd';
 import styles from './styles.module.scss';
 import { dataMenuItems, userInfoItems } from '@/src/store/data/siderData';
-import { RiBankLine } from 'react-icons/ri';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -10,10 +9,11 @@ const { Sider } = Layout;
 
 const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
   const router = useRouter();
+  const [selectedItem, setSelectedItem] = useState<string>('');
 
-  // const handleClickRouter = (label: string) => {
-  //   router.push(`${label}`);
-  // };
+  const handleClickRouter = (label: string) => {
+    setSelectedItem(label);
+  };
 
   return (
     <Sider
@@ -24,7 +24,7 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
     >
       <div className={styles.sider__name}>
         <Link href={'/'} className={styles.sider__name}>
-          CREATIVE TIM
+          QUANG HUY
         </Link>
       </div>
       <Divider orientation="left" plain></Divider>
@@ -38,7 +38,7 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
           return (
             <Menu.Item
               key={`menu_${item.key}`}
-              // onClick={() => handleClickRouter(item.label)}
+              onClick={() => handleClickRouter(item.label)}
               className={styles.menuItem}
             >
               <Link href={`${item.label}`} className={styles.linkMenuItem}>
@@ -54,26 +54,3 @@ const SiderContainer: React.FC<{ props: ICollapsed }> = ({ props }) => {
 };
 
 export default SiderContainer;
-
-[
-  {
-    key: '1',
-    icon: <RiBankLine />,
-    label: 'Dash board',
-  },
-  {
-    key: '2',
-    icon: <RiBankLine />,
-    label: 'Dash board',
-  },
-  {
-    key: '3',
-    icon: <RiBankLine />,
-    label: 'Dash board',
-  },
-  {
-    key: '4',
-    icon: <RiBankLine />,
-    label: 'Dash board',
-  },
-];

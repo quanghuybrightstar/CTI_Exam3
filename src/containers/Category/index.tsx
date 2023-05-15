@@ -1,9 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { useApi } from '@/src/api/useApi';
 import type { ColumnsType } from 'antd/es/table';
 import { Table, Button } from 'antd';
 import styles from './styles.module.scss';
 import Link from 'next/link';
+import {
+  SearchOutlined,
+  EditOutlined,
+  DeleteOutlined,
+} from '@ant-design/icons';
 
 const CategoryContainer = () => {
   const $api = useApi();
@@ -31,8 +37,12 @@ const CategoryContainer = () => {
       key: '',
       render: (item) => (
         <div>
-          <div className="btn-edit">Sửa</div>
-          <div className="btn-delete">Xóa</div>
+          <div className="btn-edit">
+            <EditOutlined />
+          </div>
+          <div className="btn-delete">
+            <DeleteOutlined />
+          </div>
         </div>
       ),
       width: '30%',

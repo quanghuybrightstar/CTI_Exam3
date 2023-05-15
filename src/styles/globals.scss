@@ -46,11 +46,19 @@ a {
   color: blue;
   cursor: pointer;
   margin-bottom: 0.2rem;
+  font-size: 2rem;
+  &:hover {
+    color: #4d4dff;
+  }
 }
 
 .btn-delete {
   color: red;
   cursor: pointer;
+  font-size: 2rem;
+  &:hover {
+    color: #ff5c33;
+  }
 }
 
 //Btn add new

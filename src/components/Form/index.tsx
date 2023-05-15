@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Select } from 'antd';
 import { useApi } from '@/src/api/useApi';

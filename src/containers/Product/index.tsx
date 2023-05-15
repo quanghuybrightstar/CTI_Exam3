@@ -8,7 +8,7 @@ import { Image } from 'antd';
 import Link from 'next/link';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 import type { InputRef } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 
 const ProductContainer = () => {
@@ -248,13 +248,15 @@ const ProductContainer = () => {
       render: (item) => (
         <div>
           <Link href={'product/[productId]'} as={`product/${item.id}`}>
-            <div className="btn-edit">Sửa</div>
+            <div className="btn-edit">
+              <EditOutlined />
+            </div>
           </Link>
           <div
             className="btn-delete"
             onClick={() => handleDeleteProduct(item.id)}
           >
-            Xóa
+            <DeleteOutlined />
           </div>
         </div>
       ),

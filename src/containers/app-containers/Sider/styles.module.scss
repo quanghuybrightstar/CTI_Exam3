@@ -27,11 +27,14 @@
     cursor: pointer;
   }
 
+  .menuItemSelected {
+    color: #eb632d !important;
+  }
   .menuItem {
     @include flexDisplay;
     margin-left: 0;
     .ant-menu-title-content {
-      @include flexDisplay;
+      @include flexDisplay;                                                                                                                                                                                                 
     }
     .linkMenuItem {
       @include flexDisplay;
