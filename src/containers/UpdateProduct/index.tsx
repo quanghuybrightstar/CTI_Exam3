@@ -19,11 +19,15 @@ const UpdateProductContainer: React.FC<{ props: any }> = ({ props }) => {
   const [confirmLoading, setConfirmLoading] = useState<boolean>(false);
   const [isOpenConfirmModal, setIsOpenConfirmModal] = useState<boolean>(false);
   const [bodyUpdateProduct, setBodyUpdateProduct] = useState();
+  //Form
+  const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
     console.log('Success:', values);
     values.price = parseInt(values.price);
     setBodyUpdateProduct(values);
+    form.setFieldsValue(values);
+    console.log(form.getFieldsValue());
     showModal();
   };
   const onFinishFailed = (errorInfo: any) => {
@@ -67,6 +71,7 @@ const UpdateProductContainer: React.FC<{ props: any }> = ({ props }) => {
   };
   useEffect(() => {
     getProduct();
+    form.setFieldsValue(productById);
   }, []);
 
   //Get category data
@@ -80,11 +85,6 @@ const UpdateProductContainer: React.FC<{ props: any }> = ({ props }) => {
   useEffect(() => {
     getCategory();
   }, []);
-
-  //Form
-  const [form] = Form.useForm();
-
-  form.setFieldsValue(productById);
 
   return (
     <div className={styles.updateProduct_container}>
