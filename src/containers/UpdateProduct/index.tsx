@@ -68,10 +68,10 @@ const UpdateProductContainer: React.FC<{ props: any }> = ({ props }) => {
   const getProduct = async () => {
     const data: any = await $api.getProductById(productID);
     setProductById(data);
+    form.setFieldsValue(data);
   };
   useEffect(() => {
     getProduct();
-    form.setFieldsValue(productById);
   }, []);
 
   //Get category data
