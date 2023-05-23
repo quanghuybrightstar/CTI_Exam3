@@ -61,13 +61,13 @@ const UpdateProductContainer: React.FC<{ props: any }> = ({ props }) => {
   //Product By ID
   const [productById, setProductById] = useState<any>();
 
+  const getProduct = async () => {
+    const data: any = await $api.getProductById(productID);
+    setProductById(data);
+  };
   useEffect(() => {
-    const getProduct = async () => {
-      const data: any = await $api.getProductById(productID);
-      setProductById(data);
-    };
     getProduct();
-  }, [$api, productID]);
+  }, []);
 
   //Get category data
   const [dataCategory, setDataCategory] = useState<string[]>([]);

@@ -8,7 +8,11 @@ import { Image } from 'antd';
 import Link from 'next/link';
 import type { FilterConfirmProps } from 'antd/es/table/interface';
 import type { InputRef } from 'antd';
-import { SearchOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import {
+  SearchOutlined,
+  EditOutlined,
+  DeleteOutlined,
+} from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 
 const ProductContainer = () => {
@@ -173,10 +177,11 @@ const ProductContainer = () => {
       title: 'Id',
       key: 'id',
       dataIndex: 'id',
-      width: '10%',
+      width: '5%',
     },
     {
       title: 'Ảnh sản phẩm',
+      width: '20%',
       key: 'thumbnail',
       dataIndex: 'thumbnail',
       render: (thumbnail) => {
@@ -191,13 +196,13 @@ const ProductContainer = () => {
     {
       title: 'Tên sản phẩm',
       dataIndex: 'title',
-      width: '20%',
+      width: '15%',
       ...getColumnSearchProps('title'),
     },
     {
       title: 'Mô tả',
       dataIndex: 'description',
-      width: '20%',
+      width: '15%',
       render: (description) => {
         return (
           <div title={description} className={styles.product__desc}>
@@ -221,30 +226,16 @@ const ProductContainer = () => {
       ...getColumnSearchProps('brand'),
     },
     {
-      title: 'Tỷ lệ chiết khấu',
-      dataIndex: 'discountPercentage',
-      width: '15%',
-    },
-    {
-      title: 'Tỷ lệ đánh giá',
-      dataIndex: 'rating',
-      width: '15%',
-    },
-    {
-      title: 'Stock',
-      dataIndex: 'stock',
-      width: '10%',
-    },
-    {
       title: 'Thể loại',
       dataIndex: 'category',
-      width: '20%',
+      width: '15%',
       ...getColumnSearchProps('category'),
     },
     {
       title: 'Hành động',
       dataIndex: '',
       key: '',
+      width: '5%',
       render: (item) => (
         <div>
           <Link href={'product/[productId]'} as={`product/${item.id}`}>
@@ -260,7 +251,6 @@ const ProductContainer = () => {
           </div>
         </div>
       ),
-      width: '30%',
     },
   ];
   return (
